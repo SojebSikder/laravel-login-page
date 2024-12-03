@@ -19,7 +19,7 @@
     {{-- create new account form --}}
     <form action="{{ route('user.store') }}" method="POST">
         @csrf
-        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="username" placeholder="Username">
         <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Password">
         <button type="submit">Create</button>
