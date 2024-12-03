@@ -78,29 +78,40 @@
                                             <i class="fa-brands fa-twitter" style="margin-left:20px"></i> 
                                         </div>
                                     </div>
-                                    
-                                    <div>
-                                        <div class="m-3">
-                                            <input type="username" class="form-control" id="username" placeholder="Username">
+
+                                    {{-- message --}}
+                                    @if (session('success'))
+                                        <div class="alert alert-danger">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+
+                                    <form action={{ route('auth.login') }} method="post">
+                                        @csrf
+                                        <div>
+                                            <div class="m-3">
+                                                <input type="username" class="form-control" id="username" name="username" placeholder="Username">
+                                            </div>
+        
+                                            <div class="m-3">
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                                            
+                                            <div class="mt-3 d-grid gap-2">
+                                                <button class="btn btn-success" style="background: #44D090; border-color: #44D090;">Sign in</button>
+                                            </div>
                                         </div>
     
-                                        <div class="m-3">
-                                            <input type="password" class="form-control" id="password" placeholder="Password">
-                                        
-                                        <div class="mt-3 d-grid gap-2">
-                                            <button class="btn btn-success" style="background: #44D090; border-color: #44D090;">Sign in</button>
+                                        <div class="mx-3 mt-3 d-flex justify-content-between">
+                                            <div class="d-flex">
+                                                <input type="checkbox" class="form-check-input" style="margin-right: 10px" id="remember">
+                                                <label class="form-check-label" style="color: #44D090" for="remember" checked="true">Remember me</label>
+                                            </div>
+                                            <div>
+                                                <a href="" class="form-check-label text-decoration-none" style="color: black" for="remember">Forgot Password</a>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="mx-3 mt-3 d-flex justify-content-between">
-                                        <div class="d-flex">
-                                            <input type="checkbox" class="form-check-input" style="margin-right: 10px" id="remember">
-                                            <label class="form-check-label" style="color: #44D090" for="remember" checked="true">Remember me</label>
-                                        </div>
-                                        <div>
-                                            <a href="" class="form-check-label text-decoration-none" style="color: black" for="remember">Forgot Password</a>
-                                        </div>
-                                    </div>
+                                    </form> 
 
                                     <div class="mx-3 mt-3">
                                         <p class="text-center">Not a member? <a href="" class="text-decoration-none" style="color: #44D090">Sign up</a></p>
