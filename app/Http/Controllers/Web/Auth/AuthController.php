@@ -20,6 +20,11 @@ class AuthController extends Controller
                 return back()->with('success', 'Invalid credentials');
             }
 
+            // if checked remember me
+            if ($request->has('remember')) {
+                auth()->login(auth()->user(), true);
+            }
+
             $request->session()->regenerate();
 
             return redirect()->route('user.index');

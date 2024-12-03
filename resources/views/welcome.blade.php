@@ -103,7 +103,7 @@
     
                                         <div class="mx-3 mt-3 d-flex justify-content-between">
                                             <div class="d-flex">
-                                                <input type="checkbox" class="form-check-input" style="margin-right: 10px" id="remember">
+                                                <input type="checkbox" class="form-check-input" style="margin-right: 10px" id="remember" name="remember">
                                                 <label class="form-check-label" style="color: #44D090" for="remember" checked="true">Remember me</label>
                                             </div>
                                             <div>
